@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const { template, partials } = require('handlebars');
 const path = require('path');
@@ -53,6 +54,14 @@ app.get("*", (req, res)=>{
     })
 })
 
-app.listen(port , () => {
-    console.log(`listening to port at ${port}`)
-})
+const start = async () => {
+    try {
+        app.listen(port , () => {
+            console.log(`listening to port at ${port}`)
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+start();
