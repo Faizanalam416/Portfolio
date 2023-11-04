@@ -1,13 +1,12 @@
 require("dotenv").config();
 const express = require('express');
-const { template, partials } = require('handlebars');
 const path = require('path');
 const hbs = require('hbs');
 const app = express();
 
 require("./db/conn");
 const Contact = require("./models/contacts");
-const { json } = require("express");
+require("express");
 
 const port = process.env.PORT || 8000;
 
